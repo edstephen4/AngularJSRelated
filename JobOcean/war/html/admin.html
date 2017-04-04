@@ -1,0 +1,36 @@
+<!--
+* This file contains the necessary elements that will be included in the web page.
+* @author Jireh Bautista
+* @version 0.01
+* Version History
+* [07/06/2016] 0.01 - Jireh Bautista - initial codes
+* [07/20/2016] 0.02 - Jireh Bautista - revisions for the javascript like onclick functions
+* [07/27/2016] 0.03 - Jireh Bautista - added some elements
+* [08/31/2016] 0.04 - Jireh Bautista - added few onchange functions
+* [09/07/2016] 0.05 - Jireh Bautista - conversion to AngularJS
+* [10/03/2016] 0.06 - Jireh Bautista - edited switching between html files (tabs); added icon
+-->	
+	<title>Job Ocean Admin</title>
+	<link rel="stylesheet" type="text/css" href="../css/admin.css">
+	<link rel="icon" type="image/gif" href="../assets/icon.png" />
+	
+	<div class="sectionHeader" >
+		<ul>
+			<img id = "logo"  class="top"  src = "../assets/jobOceanLogo.jpg">
+			<li ng-repeat="tab in tabs" ng-class="{active:isActiveTab(tab.url)}" ng-click="onClickTab(tab)">{{tab.title}}</li>
+			<a href="#"><button id="logout" ng-click="logout()">Logout</button></a>
+		</ul>	
+	</div>
+	
+	<div ng-switch on="currentTab" >
+		<div ng-switch-when="Companies">
+			<div ng-include="currentTabHtml" ng-controller="adminCompanyController"></div>
+		</div>
+		<div ng-switch-when="Requests">
+			<div ng-include="currentTabHtml" ng-controller="adminRequestController"></div>
+		</div>
+		<div ng-switch-when="Contracts">
+			<div ng-include="currentTabHtml" ng-controller="adminContractController"></div>
+		</div>
+	</div>
+	<br/><br/>

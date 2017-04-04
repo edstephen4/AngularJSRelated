@@ -1,0 +1,61 @@
+<!-- ------------------------------------------------------------------------------
+ * Unauthorized copying of this file, via any medium is strictly prohibited
+ * Proprietary and confidential
+ * Copyright (C) Rococo Global Technologies, Inc - All Rights Reserved 2016
+ * -------------------------------------------------------------------------------->
+ 
+ <!--
+* This file contains the necessary elements that will be included in the web page.
+* @author Danielle Mae Bucog
+* @version 0.01
+* Version History
+* [04/11/2016] 0.01 – Danielle Mae Bucog – initial codes
+* [10/05/2016] Danielle Mae Bucog - HTML finalization
+-->	
+
+<link rel="stylesheet" type="text/css" href="../css/register.css">
+<div id="registerCss">
+<div id="section" ng-init="initRegisterScreen()">
+	<div class="sectionHeader">
+		<img id="header" src="..\assets\header.png" alt="Job Ocean" >
+	</div>
+	
+	<div id = 'img'>
+		<img id="form" src="..\assets\form_header.jpg" alt="Job Ocean" >
+	</div>
+	
+	<div id = "container">
+		<form name="registerForm" ng-submit="submitCompany()"> 
+			<div id = "infoContainer">
+				<label id = "sectionTitle"> Company Information </label>
+				<div class="inputfield">
+					<label> Company Name </label><br>
+					<input id= "companyName" type="text" name="CompanyName" ng-model="companyName" maxlength=254 required><br>
+					<label> Address </label><br>
+					<input id= "address" type="text" name="Address" ng-model="companyAddress" maxlength=254 required><br>
+					<label> Telephone Number </label><br>
+					<input id= "telNumber" type="text" name="TelephoneNumber" ng-model="companyTelephone" maxlength=254 required><br>
+					<label> Company URL </label><br>
+					<input id= "companyUrl" type="text" name="CompanyUrl" ng-model="companyUrl" maxlength=254 required>
+				</div>
+				
+				<label id = "sectionTitle"> Account Details </label>
+				<div class="inputfield">
+					<label> Email Address </label><br>
+					<input id="email" type="text" name="Email" ng-model="companyEmail" maxlength=254 required><br>
+					<label> Password </label><br>
+					<input id="password" type="password" name="Password" ng-model="companyPassword" maxlength=16 required>
+				</div>					
+			</div>
+			<div id = "regButton">
+				<input type="submit" value="Register">	
+			</div>
+		</form>
+	</div><br>
+	
+	<div class="sectionHeader">
+		<img id="foot" src="..\assets\ocean_floor.jpg" alt="Job Ocean" >
+	</div>
+</div>
+</div>
+

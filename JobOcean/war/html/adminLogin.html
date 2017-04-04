@@ -1,0 +1,26 @@
+ <!--
+* This file contains the necessary elements that will be included in the web page.
+* @author Ed Stephen Koh
+* @version 0.01
+* Version History
+* [04/11/2016] 0.01 – Ed Stephen Koh – initial codes
+-->	
+<title>Admin Login</title>
+<link rel="stylesheet" type="text/css" href="../css/adminlogin.css">
+
+<div id="section">
+	<div id="sectionLogin">
+		<div id = "admintag"><label id = "text">A D M I N</label></div>
+		<img class="screenIcon" src="..\assets\logo.jpg"/>
+		<br/>
+		<form>
+		<input class="inputField" type="text" placeholder="Username" ng-model="username"/>
+		<input class="inputField" type="password" placeholder="Password" ng-model="password"/>
+		<input type="submit" value="Login" ng-click="login(username, password)">
+		</form>
+		<br>
+		<br>
+	</div>
+</div>
+
+

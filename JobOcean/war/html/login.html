@@ -1,0 +1,31 @@
+<!-- ------------------------------------------------------------------------------
+ * Unauthorized copying of this file, via any medium is strictly prohibited
+ * Proprietary and confidential
+ * Copyright (C) Rococo Global Technologies, Inc - All Rights Reserved 2016
+ * -------------------------------------------------------------------------------->
+ 
+ <!--
+* This file contains the necessary elements that will be included in the web page.
+* @author Jessie May C. Cantil
+* @version 0.01
+* Version History
+* [04/11/2016] 0.01 - Jessie May C. Cantil - initial codes
+-->	
+
+
+<div id="section">
+	<div id="sectionLogin">
+		<form id="loginForm" ng-submit="loginCompany()">
+			<img class="screenIcon" src="..\assets\logo.jpg"/>
+			<input class="inputField" id="username" type="text" placeholder="Username" ng-model="username" />
+			<input class="inputField" id="password" type="password" placeholder="Password" ng-model="password" />
+			<input type="submit" value="Login">
+			<br/>
+			<br/>
+		</form>
+		<a href="#CreateCompany">Sign Up</a>
+		<br/>
+		<br/>
+		<a href="#AdminLogin">Admin</a>
+	</div>
+</div>

@@ -1,0 +1,210 @@
+
+body {
+	margin: 0 !important;
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+
+div#section {
+	background-color: #5abee8;
+	width: 100%;
+	height: 100%;
+}
+
+div#section div#sectionLogin{
+	width: 350px;
+	height: 350px;
+    margin: auto;
+}
+
+
+div#section div#sectionLogin img.screenIcon{
+	width: 350px;
+	height: 350px;
+    margin: 40px 0;
+}
+
+div#section div#sectionLogin input.inputField{
+	width: 100%;
+	height: 40px;
+    margin: 3px 0;
+    border: 1px solid #5abee8;
+	color: #5abee8;
+    border-radius: 10px;
+	text-align: center;
+	outline:none;
+}
+
+
+div#section div#sectionLogin input::-webkit-input-placeholder{
+	color: #5abee8;
+}
+
+div#section div#sectionLogin input[type=submit] {
+    width: 100%;
+	height: 45px;
+    background-color: #007BB8;
+    color: white;
+    margin: 3px 0;
+    border: 1px solid #5abee8;
+    border-radius: 10px;
+    cursor: pointer;
+	border-bottom: 4px solid #006ea5;
+}
+
+div#section div#sectionLogin input[type=submit]:hover {
+    background-color: 	#4682B4;
+	border-bottom: 4px solid #3f75a2;
+}
+
+div#section div#sectionLogin input.inputField:focus{
+	border: 1px solid #56b4ef;
+	box-shadow: 0px 0px 3px 1px #4682B4;
+}
+
+div#section div#sectionLogin a#registerHere{
+    margin: 0px 125px;
+}
+
+/*
+Header
+*/
+
+/* RENUEL E. AVILA (Logout.html) -->*/
+div#companySection {
+	background-color: white;
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	font-family: Arial, Helvetica, sans-serif;
+	margin: auto;
+	overflow-y:scroll;
+}
+
+div#companySection div#companySectionHeader{
+	width: 100%;
+	height: 70px;
+}
+
+div#companySection img#header{
+	width: 100%;
+	height: 120px;
+}
+
+div#companySection div#logoutButton input[type=submit] {
+    width: 150px;
+	height: 40px;
+    background-color: #007BB8;
+    color: white;
+    margin: 0 875px;
+    border: 1px solid #5abee8;
+    border-radius: 10px;
+    cursor: pointer;
+	border-bottom: 4px solid #006ea5;
+}
+
+div#companySection div#logoutButton input[type=submit]:hover {
+    background-color: #4682B4;
+	border-bottom: 4px solid #3f75a2;
+}
+
+div#companySection div#logoutButton {
+	width: 100%;
+	height: 50px;
+}
+
+div#companySection div#companySectionBody{
+	background-color: #C1DBE8;
+	width: 100%;
+	height: 100%;
+	margin: auto;
+}
+
+div#companySection div#companySectionBody div#whaleshark {
+	width: 100%;
+	height: 13%;
+}
+
+div#companySection div#companySectionBody div#companySectionBodyCompanyProfile {
+	padding-bottom: 10%;
+	padding-left: 25%;
+	padding-right: 25%;
+	width: 50%;
+	height: 75%;
+}
+
+div#companySection div#companySectionBody div#companySectionBodyCompanyProfileHeader {
+	background-color: #5BBEE8;
+	padding-left: 25px;
+	padding-top: 25px;
+	padding-bottom: 30px;
+}
+
+div#companySection div#companySectionBody img#companyProfileHeaderImg {
+	padding-top: 20px;
+	margin-left: 57%;
+	width: 256px;
+	height: 186px;
+}
+
+div#companySection div#companySectionBody div#companySectionBodyCompanyProfileHeader #companyProfileLbl {
+	color: white;
+	font-size: 30px;
+}
+
+div#companySection div#companySectionBody div#companySectionBodyCompanyProfile div#companySectionBodyCompanyProfileBody {
+	background-color: #F5F5F5;
+	height: 63%;
+	padding-top: 5%;
+	padding-left: 20%;
+	padding-right: 20%;
+}
+
+div#companySection div#companySectionBody div#companySectionBodyCompanyProfile div#companySectionBodyCompanyProfileBody input.inputAttr {
+	width: 100%;
+	height: 25px;
+    margin: 7px 0;
+    border: 1px solid #E1E1E1;
+	color: #5abee8;
+    border-radius: 5px;
+	text-align: center;
+	outline:none;
+}
+
+div#companySection div#companySectionBody div#companySectionBodyCompanyProfile div#companySectionBodyCompanyProfileBody label.labelAttr {
+	color: #5BBEE8
+}
+div#companySection div#companySectionBody div#companySectionBodyCompanyProfile div#companySectionBodyCompanyProfileBody div#submitBtn{
+	padding-left: 25%;
+	padding-right: 25%;
+}
+div#companySection div#companySectionBody div#companySectionBodyCompanyProfile div#companySectionBodyCompanyProfileBody button[type=submit]  {
+	width: 100%;
+	height: 35px;
+    background-color: #007BB8;
+    color: white;
+    margin: 3px 0;
+    border: 1px solid #5abee8;
+    border-radius: 5px;
+    cursor: pointer;
+	border-bottom: 4px solid #006ea5;
+}
+
+div#companySection div#companySectionBody div#companySectionBodyCompanyProfile div#companySectionBodyCompanyProfileBody button[type=submit]:hover {
+    background-color: 	#4682B4;
+	border-bottom: 4px solid #3f75a2;
+}
+
+div#companySection div#companySectionBody div#companySectionBodyCompanyProfile div#companySectionBodyCompanyProfileBody input.inputAttr:focus{
+	border: 1px solid #56b4ef;
+	box-shadow: 0px 0px 3px 1px #4682B4;
+}
+/*<-- RENUEL E. AVILA (Logout.html) */
+
+
+
+
+

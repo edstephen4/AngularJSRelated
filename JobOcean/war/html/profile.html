@@ -1,0 +1,56 @@
+<!-- ------------------------------------------------------------------------------
+ * Unauthorized copying of this file, via any medium is strictly prohibited
+ * Proprietary and confidential
+ * Copyright (C) Rococo Global Technologies, Inc - All Rights Reserved 2016
+ * -------------------------------------------------------------------------------->
+ 
+ <!--
+* This file contains the necessary elements that will be included in the web page.
+* @author Lehmar Cabrillos
+* @version 0.01
+* Version History
+* [04/11/2016] 0.01 – Lehmar Cabrillos – initial codes
+-->	
+
+
+<link rel="stylesheet" type="text/css" href="../css/profile.css">
+<div id="companySection">
+	<div id="companySectionHeader">
+		<img src="../assets/header.jpg" id="header"/>
+	</div>
+	<div id="logoutButton">
+		<input type="submit" ng-click="logout()" value="Logout"/> 
+	</div>
+	
+	<div id="companySectionBody">
+		<div id="whaleshark">
+			<img id="companyProfileHeaderImg" src="../assets/whaleshark.png"/>
+		</div>
+		<div id="companySectionBodyCompanyProfile">
+			<div id="companySectionBodyCompanyProfileHeader">
+				<label id="companyProfileLbl">Company Profile</label>
+			</div>
+			
+			<div id="companySectionBodyCompanyProfileBody" ng-controller="companyProfileController">
+				<form name=updateCompanyForm ng-submit="UpdateProfile()">
+					<label class="labelAttr">Company Name</label>
+					<input type="text" class="inputAttr" value="{{companyName}}" id="companyName" ng-model="companyName" required />
+					
+					<label class="labelAttr">Address</label>
+					<input type="text" class="inputAttr" id="companyAddress" ng-model="companyAddress" value={{companyAddress}} required />
+					
+					<label class="labelAttr">Telephone</label>
+					<input type="text" class="inputAttr" id="companyTelephone" ng-model="companyTelephone" value={{companyTelephone}} required />
+					
+					<label class="labelAttr">Company URL</label>
+					<input type="text" class="inputAttr" id="companyURL" ng-model="companyUrl" value={{companyUrl}} required />
+					<br>
+					<div id="submitBtn">
+						<button type="submit" id="submitAttr">Save Changes</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+

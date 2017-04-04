@@ -1,0 +1,45 @@
+<!-- ------------------------------------------------------------------------------
+ * Unauthorized copying of this file, via any medium is strictly prohibited
+ * Proprietary and confidential
+ * Copyright (C) Rococo Global Technologies, Inc - All Rights Reserved 2016
+ * -------------------------------------------------------------------------------->
+ 
+ <!--
+* This file contains the necessary elements that will be included in the web page.
+* @author Lehmar Cabrillos
+* @version 0.01
+* Version History
+* [04/11/2016] 0.01 �ｿｽ Lehmar Cabrillos �ｿｽ initial codes
+-->	
+
+<!DOCTYPE html>
+<html ng-app="jobOceanApp">	
+	<head>
+		<title> Job Ocean Application </title>
+		<!-- Attaching the style sheet for formatting. -->
+		<link rel="stylesheet" type="text/css" href="../css/login.css">		
+		<link rel="stylesheet" type="text/css" href="../css/company.css">
+	</head>
+	
+	<body ng-controller="jobOceanController" >
+				
+		<!-- Holds the forms for inputs and display.-->
+			<div>
+				<ng-view>  Loading... </ng-view>
+			</div>
+		<!-- Attaching Javascript files for screen interaction.-->
+		<script src="../js/angular.js"></script>
+		<script src="../js/angular-route.js"></script>
+		<script src="../js/jobOcean.js"></script>
+		<script src="../js/admin.js"></script>
+		<script src="../js/login.js"></script>
+		<script src="../js/register.js"></script>
+		<script src="../js/profile.js"></script>
+		<script src="../js/company.js"></script>
+		<script src="../js/adminLogin.js"></script>
+		<script src="../js/adminCompany.js"></script>
+		<script src="../js/adminRequest.js"></script>
+		<script src="../js/adminContract.js"></script>
+		
+	</body>
+</html>

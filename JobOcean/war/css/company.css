@@ -1,0 +1,624 @@
+
+body {
+	/*Overriding the margin property of body.*/
+	margin: 0 !important;
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+#company {
+	margin: 0 !important;
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	font-family: Arial, Helvetica, sans-serif;
+	overflow-y: scroll;
+}
+
+/*
+Company Section
+*/
+
+div#companySection {
+	background-color: #5abee8;
+	height: 100%;
+	margin: auto;	
+}
+
+div#companySection div#companySectionHeader{
+	width: 100%;
+	height: 180px;
+	background-color: #5abee8;
+}
+
+#nameHeader{
+	padding-top: 15px;
+	padding-left: 35px;
+	width: 900px;
+    height: 90px;
+    background-color: white;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    margin-top: 160px;
+    -webkit-box-shadow: 0px 25px 30px rgba(0,0,0,.1);
+    -moz-box-shadow: 0px 25px 30px rgba(0,0,0,.1);
+    box-shadow: 0px 5px 10px rgba(0,0,0,.1);
+}
+
+#imgHeader{
+	display: block;
+    margin: 0 auto;
+	width: 900px;
+}
+
+.button{
+	width: 120px;
+	height: 40px;
+    background-color: #00a3e8;
+    color: white;
+    border-radius: 15px;
+	margin-left: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    padding: 5px 20px 5px 20px;
+    text-decoration: none;
+}
+
+.button:hover{
+	background-color: #bde4f5;
+}
+#companyNamee {
+	color: #14667e;
+	font-size: 2em;
+}
+
+
+#tabSection {
+	width: 1000px;
+	height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    margin-top: 100px;
+	background-color: #35afe3;
+}
+
+#tabs{
+	background: #5abee8;
+	width: 100%;
+	height:40px;
+}
+
+.tab2{
+	line-height: 40px;
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+	font-size: 15px;
+	cursor: pointer;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	background-color: #35afe3;
+	padding: 0px 30px 0px 30px;		
+}
+
+.tab2:hover{
+  	background-color: #bde4f5;
+  	color: white;
+}
+
+.tab2:active{
+    background-color: #5abee8;
+    color: white;
+}
+
+.statuses{
+	padding: 20px;
+	text-align: center;	
+}
+
+#jobRequests{
+    padding: 10px;
+}
+
+#contracts{
+    padding: 10px;
+}
+
+.createNewJobRequestTab{
+	width: 150px;
+	height: 32px;
+    background-color: #00a3e8;
+    color: white;
+    margin-left: 10px;
+    font-size: 12px;
+    border: 1px solid #5abee8;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.createNewJobRequestTab:hover {
+    background-color: 	#14667e;
+}
+
+#tableJobRequests{
+    border-collapse: collapse;
+    width: 100%;
+	border-color: #4682B4;
+	font-size:11pt;
+}
+
+tr:nth-child(even) {
+	background-color: white;
+}
+
+tr:nth-child(odd) {
+	background-color: #efefef;
+}
+tr:not(:first-child):hover{
+	background-color: #b6e2ef;
+}
+
+td { 
+    padding-left: 10px;
+    color: #14667e;
+	line-height: 20px;
+	font-size: 12px;
+	text-align: left;
+}
+
+.highlight
+{
+	background-color: #5abee8;
+	color: white;
+}
+
+table{
+	width: 100%;	
+	border: 0;
+	border-collapse:collapse;
+	-webkit-box-shadow: 0px 20px 30px rgba(0,0,0,.2);
+    -moz-box-shadow: 0px 20px 30px rgba(0,0,0,.2);
+    box-shadow: 0px 20px 30px rgba(0,0,0,.2);
+}
+
+#topleft{
+	border-top-left-radius: 10px; 
+	backgroud-color: #5abee8; 
+}
+
+#topright{
+	border-top-right-radius: 10px; 
+	backgroud-color: #5abee8;
+}
+
+th{
+	color: white;
+	padding-left: 10px;
+	background-color: #14667e;
+	font-size: 12px;
+	line-height: 30px;
+	text-align: left;
+}
+
+.update{
+	width: 60px;
+	height: 20px;
+    background-color: #00a3e8;
+    color: white;
+    margin: 3px 0;
+    font-size: 11px;
+    border: 1px solid #5abee8;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.update:hover {
+    background-color: 	#6dc3e8;
+}
+
+#tableJobRequestContractors{
+	border-collapse: collapse;
+    width: 100%;
+	border-color: #4682B4;
+	font-size:10pt;
+}
+
+#searchField{
+    width: 730px;
+	height: 32px;
+    background-color: white;
+    color: black;
+    border: none;
+	padding-left: 40px;
+    border-radius: 10px;
+    margin-left: 10px;
+    color: #14667e;
+}
+
+#icon{
+    width: 16px;
+	margin-left: 25px;
+	margin-top: 10px;
+	position:absolute;
+}
+
+/* Create New Job Request */
+.inputfield{
+	background-color: #eaebea;
+	padding: 25px;
+	border-radius: 10px;
+	color: #000;
+	font-size: 14px
+}
+
+.updateInputfield{
+	background-color: #f6f6f6;
+	padding: 10px;
+	border-radius: 10px;
+	color: #000;
+	font-size: 14px
+}
+
+#createContractSection{
+	margin-top: 10px;
+	margin-bottom: 10px
+}
+
+.inputfieldContract{
+	background-color: #eaebea;
+	padding: 35px;
+	border-radius: 10px;
+	color: #000;
+	font-size: 14px
+}
+
+.inputsContract{
+	margin-left: 70px;
+}
+
+.inputs{
+	margin-left: 85px;
+}
+
+.updateInputs{
+	padding: 20px;
+	margin-left: 85px;
+}
+
+#createNewJobRequest{
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#updateJobRequest{
+	padding: 10px;
+}
+
+#jobRequestNumber{
+	width: 138px;
+	height: 35px;
+    margin: 5px 0;
+	padding: 5px;
+    border-radius: 5px;
+	border: 1px solid #fff;
+	border-top: 1px solid #dcdedd;
+	outline:none;	
+	font-size: 1em;
+	text-align: center;
+}
+
+#updateJobRequestNumber{
+	width: 138px;
+	height: 35px;
+    margin: 5px 0;
+	padding: 5px;
+    border-radius: 5px;
+	border: 1px solid #fff;
+	border-top: 1px solid #dcdedd;
+	outline:none;	
+	font-size: 1em;
+	text-align: center;
+}
+
+#description{
+	width: 500px;
+	height: 100px;
+    margin: 5px 0;
+	padding: 5px;
+    border-radius: 5px;
+	border: 1px solid #fff;
+	border-top: 1px solid #dcdedd;
+	outline:none;	
+	font-size: 1em;
+}
+
+#updateDescription{
+	width: 500px;
+	height: 100px;
+    margin: 5px 0;
+	padding: 5px;
+    border-radius: 5px;
+	border: 1px solid #fff;
+	border-top: 1px solid #dcdedd;
+	outline:none;	
+	font-size: 1em;
+}
+
+.labelStyle{
+	color: #007BB8;
+}
+
+.dateFields{
+	width: 138px;
+	height: 35px;
+    margin: 5px 0;
+    border-radius: 5px;
+	border: 1px solid #fff;
+	border-top: 1px solid #dcdedd;
+	outline:none;	
+	font-size: 1em;
+	text-align: center;
+}
+
+.inputfield input[type=submit] {
+    width: 200px;
+	height: 40px;
+    background-color: #007BB8;
+    color: white;
+    margin: 3px 310px;
+    border: none;
+    border-radius: px;
+    cursor: pointer;
+	border-bottom: 4px solid #006ea5;
+}
+
+.inputfield input[type=submit]:hover {
+    background-color: 	#4682B4;
+	border-bottom: 4px solid #3f75a2;
+}
+
+.inputsContract input[type=submit] {
+    width: 200px;
+	height: 40px;
+    background-color: #007BB8;
+    color: white;
+    margin: 3px 310px;
+    border: none;
+    border-radius: px;
+    cursor: pointer;
+	border-bottom: 4px solid #006ea5;
+}
+
+.inputsContract input[type=submit]:hover {
+    background-color: 	#4682B4;
+	border-bottom: 4px solid #3f75a2;
+}
+
+.inputField {
+	border: none;
+	width: 80px;
+}
+
+#number {
+	width: 100px;
+}
+
+.btnUpdateJobRequest {
+    width: 150px;
+	height: 40px;
+    background-color: #007BB8;
+    color: white;
+    border: 1px solid #5abee8;
+    border-radius: 10px;
+    cursor: pointer;
+	border-bottom: 4px solid #006ea5;
+}
+
+.btnUpdateContract {
+    width: 150px;
+	height: 40px;
+    background-color: #007BB8;
+    color: white;
+    border: 1px solid #5abee8;
+    border-radius: 10px;
+    cursor: pointer;
+	border-bottom: 4px solid #006ea5;
+}
+
+#btnAddContract, #addNewRequest {
+    width: 200px;
+	height: 40px;
+    background-color: #007BB8;
+    color: white;
+    border: none;
+    border-radius: px;
+    cursor: pointer;
+	border-bottom: 4px solid #006ea5;
+}
+#btnAddContract:hover, #addNewRequest:hover {
+    background-color: 	#4682B4;
+	border-bottom: 4px solid #3f75a2;
+}
+
+#addContractButtonSection{
+	margin-top: 50px;
+	padding-right: 500px;
+}
+
+#contractNumber{
+	width: 138px;
+	height: 35px;
+    margin: 5px 0;
+    border-radius: 5px;
+	border: 1px solid #fff;
+	border-top: 1px solid #dcdedd;
+	outline:none;	
+	font-size: 1em;
+	text-align: center;
+}
+
+#updateFieldJobRequest{
+	width: 138px;
+	height: 35px;
+    margin: 5px 0;
+    border-radius: 5px;
+	border: 1px solid #fff;
+	border-top: 1px solid #dcdedd;
+	outline:none;	
+	font-size: 1em;
+	text-align: center;
+}
+
+
+#statusJobRequest{
+	width: 138px;
+	height: 30px;
+    margin: 5px 0;
+	padding: 5px;
+    border-radius: 5px;
+	border: 1px solid #fff;
+	border-top: 1px solid #dcdedd;
+	outline:none;	
+	font-size: 1em;
+	text-align: center;
+}
+
+#jNumber{
+	width: 138px;
+	height: 35px;
+    margin: 5px 0;
+	padding: 5px;
+    border-radius: 5px;
+	border: 1px solid #fff;
+	border-top: 1px solid #dcdedd;
+	outline:none;	
+	font-size: 1em;
+	text-align: center;
+}
+
+#contractName{
+	width: 250px;
+	height: 35px;
+	padding-left: 10px;
+    border-radius: 5px;
+	border: 1px solid #fff;
+	border-top: 1px solid #dcdedd;
+	outline:none;	
+	font-size: 1em;
+}
+
+#contractStatus{
+	width: 138px;
+	height: 35px;
+    margin: 5px 0;
+	padding: 5px;
+    border-radius: 5px;
+	border: 1px solid #fff;
+	border-top: 1px solid #dcdedd;
+	outline:none;	
+	font-size: 1em;
+	text-align: center;
+}
+
+#typeOfContract{
+	width: 138px;
+	height: 35px;
+    margin: 5px 0;
+	padding: 5px;
+    border-radius: 5px;
+	border: 1px solid #fff;
+	border-top: 1px solid #dcdedd;
+	outline:none;	
+	font-size: 1em;
+	text-align: center;
+}
+
+#typeOfJobRequest{
+	width: 180px;
+	height: 35px;
+    margin: 5px 0;
+	padding: 5px;
+    border-radius: 5px;
+	border: 1px solid #fff;
+	border-top: 1px solid #dcdedd;
+	outline:none;	
+	font-size: 1em;
+	text-align: center;
+}
+
+
+
+.newTabLayout{}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 800px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #007BB8;
+    color: white;
+}
+
+.modal-body {padding: 2px 16px;}

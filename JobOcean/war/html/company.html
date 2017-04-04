@@ -1,0 +1,294 @@
+
+	<link rel="stylesheet" type="text/css" href="../css/company.css">
+<div id="company">
+	<div id="companySection">
+		<div id="companySectionHeader">
+			<div id="nameHeader">
+				<label id="companyNamee" >{{loginCompanyName}}</label>
+				<br/>
+				<a class="button" href="#/Company/Profile">Edit Company Profile</a>
+				<a class="button" ng-click="logout()" >Logout</a>
+			</div>
+			<img src="../assets/companyheader.png" id="imgHeader" />
+		</div>
+		<div id = "tabSection"  ng-init="clickJobRequestTab()">
+			<div id="tabs">
+				<ul>
+					<li class="tab2" ng-click="clickJobRequestTab()" ng-model="tabClicked"> Job Requests </button></li>
+					<li class="tab2" ng-click="clickContractTab()" ng-model="tabClicked"> Contracts </button></li>
+				</ul>
+			</div>	
+			
+			<div id="jobRequests" ng-show="tabClicked == 'jobRequestTab'">
+				<div id="search">
+					<img src="../assets/magnifying_glass.jpg" id="icon">
+					<input id="searchField" type="text" placeholder="Search for a job request using job request number" ng-model="search"/>
+					<button class="createNewJobRequestTab" id="addNewJobRequest"> + Add Job Request </button>
+				</div>
+				<br/><br/>
+				<table id="tableJobRequests" ng-init="search=''">
+					<tr>
+						<th id="topleft" class="contentLabel"> Job Request No. </th>
+						<th class="contentLabel"> Description</th>
+						<th class="contentLabel"> Start Date </th>
+						<th class="contentLabel"> End Date </th>
+						<th class="contentLabel"> Closed Date </th>
+						<th class="contentLabel"> Creation Date </th>
+						<th class="contentLabel"> Modification Date </th>
+						<th class="contentLabel"> Status </th>
+						<th id="topright" class="contentLabel"> Update </th>
+					</tr>
+					<tr ng-repeat="jobs in jobRequests | custom1:search as results"> 	
+						<td ng-bind-html="highlight(jobs.jobRequestNumber, search)"> {{jobs.jobRequestNumber}}</td>
+						<td>{{jobs.description}}</td>
+						<td>{{jobs.startDate}}</td>
+						<td>{{jobs.endDate}}</td>
+						<td>{{jobs.closedDate}}</td>
+						<td>{{jobs.creationDate}}</td>
+						<td>{{jobs.modificationDate}}</td>
+						<td ng-bind-html="highlight(jobs.status, search)">{{ jobs.status }}</td>
+						<td ng-if="jobs.status != 'Closed'">
+						 	<button class="update" ng-click="updateJobRequest(jobs)">Update</button>
+						</td>
+						 <td ng-if="jobs.status == 'Closed'" colspan="10"> </td>
+					</tr>
+					<tr ng-show="results.length == 0" ><td colspan="9">No job requests found.</td></tr>
+				</table>
+			</div>
+			
+			<div id="contracts" ng-show="tabClicked == 'contractTab'">
+				<div id="search">
+					<img src="../assets/magnifying_glass.jpg" id="icon">
+					<input id="searchField" type="text" placeholder="Search for a contract using contract number" ng-model="search"/>
+					<button class="createNewJobRequestTab" id="addNewContract"> + Add New Contract </button>
+				</div>
+				<br/><br/>
+				<table id="tableJobRequestContractors" ng-init="search=''">
+					<tr>
+						<th id="topleft" class="contentLabel"> Contract No. </th>
+						<th class="contentLabel"> Type </th>
+						<th class="contentLabel"> Contractor Name </th>
+						<th class="contentLabel"> Start Date </th>
+						<th class="contentLabel"> End Date </th>
+						<th class="contentLabel"> Closed Date </th>
+						<th class="contentLabel"> Creation Date </th>
+						<th class="contentLabel"> Modification Date </th>
+						<th class="contentLabel"> Status </th>
+						<th id="topright" class="contentLabel"> Actions </th>
+					</tr>
+					<tr ng-repeat="contract in contracts | custom3:search as results2">
+						<td ng-bind-html="highlight(contract.contractNumber, search)"> {{contract.contractNumber}}</td>
+						<td>{{contract.type}}</td>
+						<td>{{contract.contractorName}}</td>
+						<td>{{contract.startDate}}</td>
+						<td>{{contract.endDate}}</td>
+						<td>{{contract.closedDate}}</td>
+						<td>{{contract.creationDate}}</td>
+						<td>{{contract.modificationDate}}</td>
+						<td ng-bind-html="highlight(contract.status, search)">{{ contract.status }}</td>
+						 <td ng-if="contract.status != 'Closed'">
+						 	<button class="update" id="updateSelectedContract" ng-click="updateContract(contract)">Update</button>
+						 </td>
+						  <td ng-if="contract.status == 'Closed'" colspan="10">
+							 	
+							 </td>
+					</tr>			
+					<tr ng-show="results2.length == 0" ><td colspan="10">No contracts found.</td></tr>		
+				</table>
+			</div>
+			
+			<div id="updateJobRequest" ng-show="tabClicked == 'updateJobRequestTab'">
+				<div class="updateInputfield">
+					<div class="updateInputs" ng-init="initUpdateJobRequest()">
+						<form name="companyScreenForm" ng-submit="submitUpdatedJobRequest()"> 
+								<label class="labelStyle"> Job Request Number: </label> &nbsp &nbsp <input id= "updateJobRequestNumber" ng-model="updateJobRequestNumber" disabled ><br/><br/>
+								<label class="labelStyle"> Description: </label> <br/>
+								<textarea id= "updateDescription" ng-model="updateDescription" required maxlength="254"></textarea><br>
+								<label class="labelStyle"> Start Date: </label>&nbsp &nbsp &nbsp &nbsp	
+								<input class= "dateFields" id="startDate" type = "date" ng-model="updateStartDate" ng-change="verifyStartDateUpdating()" required >&nbsp &nbsp &nbsp &nbsp&nbsp
+								<label class="labelStyle"> End Date: </label>&nbsp
+								<input class= "dateFields" id="endDate"type ="date" ng-model="updateEndDate" ng-change="verifyEndDateUpdating()" required >
+								<br/> <br/>
+								<input type="submit" id="addNewRequest" value="Update">	
+								<br/> <br/>
+								<input type="button" id="btnAddContract" value="Add Contract" ng-click="addContractinUpdateView()">	
+								<br/> <br/>
+								
+						</form>
+					</div>
+					<table id="tableJobRequestContractors">
+						<tr>
+							<th> <label class="contentLabel"> Contract No. </label> </th>
+							<th> <label class="contentLabel"> Type </label> </th>
+							<th> <label class="contentLabel"> Contractor Name </label> </th>
+							<th> <label class="contentLabel"> Start Date </label> </th>
+							<th> <label class="contentLabel"> End Date </label> </th>
+							<th> <label class="contentLabel"> Closed Date </label> </th>
+							<th class="contentLabel"> Creation Date </th>
+							<th class="contentLabel"> Modification Date </th>
+							<th> <label class="contentLabel"> Status </label> </th>
+							<th> <label class="contentLabel"> Actions </label> </th>
+						</tr>
+						<tr ng-repeat="contracts in contractsOfJobRequest">
+							<td>
+								<label>{{contracts.contractNumber}}</label>
+							</td>
+							<td>
+								<label>{{contracts.type}}</label>
+							</td>
+							<td>
+								<label>{{contracts.contractorName}}</label>
+							</td>
+							<td>
+								<label>{{contracts.startDate}}</label>
+							</td>
+							<td>
+								<label>{{contracts.endDate}}</label>
+							</td>
+							<td>
+								<label>{{contracts.closedDate}}</label>
+							</td>
+							<td>
+								<label>{{contracts.creationDate}}</label>
+							</td>
+							<td>
+								<label>{{contracts.modificationDate}}</label>
+							</td>
+							<td>
+								<label>{{contracts.status}}</label>
+							</td>
+							 <td ng-if="contracts.status != 'Closed'">
+							 	<button class="update" id="updateContract" ng-click="updateContract(contracts)">Update</button>
+							 </td>
+							 <td ng-if="contracts.status == 'Closed'" colspan="10">
+							 	
+							 </td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			
+			<div id="updateContract" ng-show="tabClicked == 'updateContract'">
+				<div class="inputfieldContract">
+					<div class="inputsContract">
+						{{startDateOfContract}} &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp {{endDateOfContract}}
+						<br/><br/>
+						<form name="companyContractScreenForm" ng-submit="submitUpdateContract()"> 
+							<label class="labelStyle"> Contract Number: </label> &nbsp &nbsp 
+							<input id= "contractNumber" ng-model="contractNumber" disabled><br/>
+							<label class="labelStyle"> Type: </label> &nbsp &nbsp &nbsp &nbsp
+							<select id="typeOfContract" ng-model="type.typeOfContractSelected" ng-options="item for item in type.typeOfContracts" required> </select><br/>
+							<label class="labelStyle"> Contractor Name: </label> &nbsp &nbsp 
+							<input id= "contractName" type="text" ng-model="contractorName" required><br/>
+							<label class="labelStyle"> Start Date: </label>&nbsp &nbsp &nbsp &nbsp	
+							<input class= "dateFields" id="startDateContract" type = "date" ng-model="startDateContract" ng-change="verifyStartDateOfCotract()" required >&nbsp &nbsp &nbsp &nbsp
+							<label class="labelStyle"> End Date: </label>&nbsp
+							<input class= "dateFields" id="endDateContract" type ="date" ng-model="endDateContract" ng-change="verifyEndDateOfCotract()" required ><br/><br/>
+							<input type="submit" id="addNewContract" value="Update" ng-model="addNewContract">	
+						</form>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+</div>
+
+<div id="myModal" class="modal">
+   <!-- Modal content -->
+	  <div class="modal-content">
+	    <div class="modal-header">
+	      <span class="close" id="close">x</span>
+	      <h2>Create Job Request</h2>
+	    </div>
+	    <div class="modal-body">
+	    	<div id="createNewJobRequest" ng-init="initCreateNewJobRequest()">
+				<div class="inputfield">
+					<div class="inputs">
+						<form name="companyScreenForm" ng-submit="submitJobRequest()"> 
+							<label class="labelStyle"> Job Request Number: </label> &nbsp &nbsp <input id= "jobRequestNumber" ng-model="jobRequestNumber" disabled ><br/><br/>
+							<label class="labelStyle"> Description: </label> <br/>
+							<textarea id= "description" ng-model="description" required maxlength="254" ></textarea><br/><br/>
+							<label class="labelStyle"> Start Date: </label>&nbsp &nbsp &nbsp &nbsp	
+							<input class= "dateFields" id="startDate" type = "date" ng-model="startDate" ng-change="verifyStartDate()" required >&nbsp &nbsp &nbsp &nbsp&nbsp
+							<label class="labelStyle"> End Date: </label>&nbsp
+							<input class= "dateFields" id="endDate"type ="date" ng-model="endDate" ng-change="verifyEndDate()" required ><br/><br/>
+							<input type="submit" id="addNewRequest" value="Add" ng-model="addNewRequestButton">	
+						</form>
+					</div>
+				</div>
+			</div>
+	    </div>
+	 </div>
+</div>
+
+<div id="myModalContract" class="modal">
+   <!-- Modal content -->
+	  <div class="modal-content">
+	    <div class="modal-header">
+	      <span class="close" id="closeContract">x</span>
+	      <h2>Create New Contract</h2>
+	    </div>
+	    <div class="modal-body">
+	    	<div id="createContractSection" ng-init="initCreateNewContract()">
+				<div class="inputfieldContract">
+					<div class="inputsContract">
+						{{startDateOfContract}} &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp {{endDateOfContract}}
+						<br/><br/>
+						<form name="companyContractScreenForm" ng-submit="submitContract()"> 
+							<label class="labelStyle"> Job Number: </label>
+							<select id="typeOfJobRequest" ng-model="selectedJobRequest" ng-options="item.description for item in jobRequestsAvailable()" ng-change="addNewContractFromSelectedJobReq(selectedJobRequest)" required> </select></br>
+							<label class="labelStyle"> Contract Number: </label> &nbsp &nbsp 
+							<input id= "contractNumber" ng-model="contractNumber" disabled><br/>
+							<label class="labelStyle"> Type: </label> &nbsp &nbsp &nbsp &nbsp
+							<select id="typeOfContract" ng-model="type.typeOfContractSelected" ng-options="item for item in type.typeOfContracts" required> </select><br/>
+							<label class="labelStyle"> Contractor Name: </label> &nbsp &nbsp 
+							<input id= "contractName" type="text" ng-model="contractorName" required><br/>
+							<label class="labelStyle"> Start Date: </label>&nbsp &nbsp &nbsp &nbsp	
+							<input class= "dateFields" id="startDateContract" type = "date" ng-model="startDateContracts" ng-change="verifyStartDateOfContract()" required >&nbsp &nbsp &nbsp &nbsp
+							<label class="labelStyle"> End Date: </label>&nbsp
+							<input class= "dateFields" id="endDateContract"type ="date" ng-model="endDateContracts" ng-change="verifyEndDateOfContract()" required ><br/><br/>
+							<input type="submit" id="addNewContract" value="Add" ng-model="addNewContract">	
+						</form>
+					</div>
+				</div>
+			</div>
+	    </div>
+	 </div>
+</div>
+
+<div id="myModalAddContract" class="modal">
+   <!-- Modal content -->
+	  <div class="modal-content">
+	    <div class="modal-header">
+	      <span class="close" id="closeAddContract">x</span>
+	      <h2>Create New Contract</h2>
+	    </div>
+	    <div class="modal-body">
+	    	<div id="createContractSection" ng-init="initCreateNewContracts()">
+				<div class="inputfieldContract">
+					<div class="inputsContract">
+						{{startDateOfContract}} &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp {{endDateOfContract}}
+						<br/><br/>
+						<form name="companyContractScreenForm" ng-submit="submitCreatedContract()"> 
+							<label class="labelStyle"> Job Number: </label>
+							<input id="updateFieldJobRequest" ng-model="jobReqToEdit.jobRequestNumber" required disabled /></br>
+							<label class="labelStyle"> Contract Number: </label> &nbsp &nbsp 
+							<input id= "contractNumber" ng-model="contractNumber" disabled><br/>
+							<label class="labelStyle"> Type: </label> &nbsp &nbsp &nbsp &nbsp
+							<select id="typeOfContract" ng-model="type.typeOfContractSelected" ng-options="item for item in type.typeOfContracts" required> </select><br/>
+							<label class="labelStyle"> Contractor Name: </label> &nbsp &nbsp 
+							<input id= "contractName" type="text" ng-model="contractorName" required><br/>
+							<label class="labelStyle"> Start Date: </label>&nbsp &nbsp &nbsp &nbsp	
+							<input class= "dateFields" id="startDateContract" type = "date" ng-model="contractStartDate" ng-change="verifyStartDateContractUpdateView()" required >&nbsp &nbsp &nbsp &nbsp
+							<label class="labelStyle"> End Date: </label>&nbsp
+							<input class= "dateFields" id="endDateContract"type ="date" ng-model="contractEndDate" ng-change="verifyEndDateContractUpdateView()" required ><br/>
+							<br/>
+							<input type="submit" id="addNewContract" value="Add" ng-model="addNewContract">	
+						</form>
+					</div>
+				</div>
+			</div>
+	    </div>
+	 </div>
+</div>

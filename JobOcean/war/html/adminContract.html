@@ -1,0 +1,89 @@
+ <!--
+* This file contains the necessary elements that will be included in the web page.
+* @author Jireh Bautista
+* @version 0.01
+* Version History
+* [09/07/2016] 0.01 - Jireh Bautista - Initital codes
+* [09/29/2016] 0.02 - Jireh Bautista - Finished AngularJS and display of contracts from
+										request from server
+* [10/02/2016] 0.04 - Jireh Bautista - edited table format
+* [10/03/2016] 0.05 - Jireh Bautista - added custom filter
+-->	
+<!-- Contains the 'Contracts' tab display -->
+<div id = "contracts" ng-init="search=''">
+	<br><br>
+	<img id = "boat" src = "..\assets\boat.png" class = "imgs">
+	<select id = "selReq" ng-model="selectedRequest" ng-change="listContractsUnderRequest(selectedRequest)"
+		ng-options="request.jobRequestNumber + ' - ' + request.description for request in jobRequests" >
+		<option selected value>ALL Job Requests</option>
+	</select>
+	<br/>
+	<br/>
+	<br/>
+	<input type="text" placeholder="Search contracts (by contract number or status)" class = "text" id="textContract"  ng-model="search">
+	
+	<img id ='glass'  src = "..\assets\glass.png" class = "imgs">
+	<div class = "content" ng-init="init()">
+		<table>
+			<tr>
+				<th id="topleft" width="7%">Contract #</th>
+				<th width="6%" >Type</th>
+				<th width="12%" >Contractor Name</th>
+				<th width="12%" >Start Date</th>
+				<th width="12%" >End Date</th>
+				<th width="12%" >Closed Date</th>
+				<th width="12%" >Creation Date</th>
+				<th width="12%" >Modification Date</th>
+				<th width="8%" >Status</th>
+				<th id="topright" width="7%">Delete</th>
+			</tr>
+			
+			<tr ng-show="selectedRequest == null" ng-repeat="contract in contracts | custom:search as results1">
+				<td ng-bind-html="highlight(contract.contractNumber, search)">{{ contract.contractNumber }}</td>
+				<td>{{ contract.type }}</td>
+				<td>{{ contract.contractorName }}</td>
+				<td>{{ contract.startDate }}</td>
+				<td>{{ contract.endDate }}</td>
+				<td>{{ contract.closedDate }}</td>
+				<td>{{ contract.creationDate }}</td>
+				<td>{{ contract.modificationDate }}</td>
+				<td ng-if="contract.status != 'Closed'">
+					<select class="selStat" ng-model="contractStatus" ng-change="updateContractStatus(contract,contractStatus)">
+						<option selected value value="Status" >{{contract.status}}</option>
+						<option value="Closed"> Closed </option>
+					</select>
+				</td>
+				<td ng-if="contract.status == 'Closed'">Closed</td>
+				<td ng-if="contract.status != 'Closed'">
+					<button class="delete" ng-click="deleteContract(contract)">Delete</button>
+				</td>
+				<td ng-if="contract.status == 'Closed'" colspan="11"></td>
+			</tr>
+			
+			<tr ng-show="selectedRequest != null" ng-repeat="contract in underContracts | custom:search as results2">
+				<td ng-bind-html="highlight(contract.contractNumber, search)">{{ contract.contractNumber }}</td>
+				<td>{{ contract.type }}</td>
+				<td>{{ contract.contractorName }}</td>
+				<td>{{ contract.startDate }}</td>
+				<td>{{ contract.endDate }}</td>
+				<td>{{ contract.closedDate }}</td>
+				<td>{{ contract.creationDate }}</td>
+				<td>{{ contract.modificationDate }}</td>
+				<td ng-if="contract.status != 'Closed'">
+					<select class="selStat" ng-model="contractStatus" ng-change="updateContractStatus(contract,contractStatus)">
+						<option selected value value="Status" >{{contract.status}}</option>
+						<option value="Closed"> Closed </option>
+					</select>
+				</td>
+				<td ng-if="contract.status == 'Closed'">Closed</td>
+				<td ng-if="contract.status != 'Closed'">
+					<button class="delete" ng-click="deleteContract(contract)">Delete</button>
+				</td>
+				<td ng-if="contract.status == 'Closed'" colspan="11"></td>
+			</tr>
+			<tr ng-show="results1.length == 0 && selectedRequest == null"><td colspan="11">No contracts found.</td></tr>
+			<tr ng-show="results2.length == 0 && selectedRequest != null"><td colspan="11">No contracts found.</td></tr>
+		</table>
+	</div>
+</div>
+<br/><br/>

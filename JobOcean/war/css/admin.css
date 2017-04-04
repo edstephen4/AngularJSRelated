@@ -1,0 +1,304 @@
+/* ------------------------------------------------------------------------------
+ * Unauthorized copying of this file, via any medium is strictly prohibited
+ * Proprietary and confidential
+ * Copyright (C) Rococo Global Technologies, Inc - All Rights Reserved 2016
+ * --------------------------------------------------------------------------- */
+ 
+/*
+* This file contains the formatting of elements in the html.
+* @author Jireh Bautista
+* @version 0.01
+* Version History
+* [07/06/2016] 0.01 - Jireh Bautista - initial codes
+* [07/20/2016] 0.02 - Jireh Bautista - changes on the tabs and tables
+* [07/27/2016] 0.03 - Jireh Bautista - added the style for the tables
+* [09/24/2016] 0.04 - Jireh Bautista - removed unnecessary blocks and modified some colors
+* [09/29/2016] 0.05 - Jireh Bautista - fixed header
+* [10/02/2016] 0.06 - Jireh Bautista - edited table formats
+* [10/03/2016] 0.07 - Jireh Bautista - added li styles; removed a
+*/	
+
+/*Style for the body*/
+body {
+	/*Overriding the margin property of body.*/
+	margin: 0 !important;
+	height: 100%;
+	width: 100%;
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #5abee8;	
+	overflow-y: scroll;
+	position:relative;
+}
+
+/*Styles for the UI template of the application.*/
+.sectionHeader{
+	width: 100%;	
+	height: 100px;
+	margin-top: -20px;
+	background-color: #fcfcff;
+	position: fixed;
+	top:0px;
+	-webkit-box-shadow: 0px 0px 10px rgba(0,0,0,.4);
+    -moz-box-shadow: 0px 0px 10px rgba(0,0,0,.4);
+    box-shadow: 0px 0px 10px rgba(0,0,0,.4);
+	z-index: 1000;
+}
+
+#logo{
+	width: 35%;	
+	margin-right: 2%;
+	margin-left: 10px;
+}
+
+ul {
+    list-style-type: none;
+	overflow: hidden;
+}
+
+/* Float the list items side by side */
+.top{
+	float: left;
+}
+
+/* Style the links inside the list items */
+li {
+    display: inline-block;
+    color: #00839f;
+	margin: 15px 35px 15px 35px;
+    text-decoration: none;
+	font-size: 15px;
+	cursor: pointer;
+}
+
+li:hover{
+  	background-color: #5abee8;
+	color: #ffffff;
+	padding: 15px 30px 15px 30px;
+	border-radius: 10px;
+	margin: 0px 5px 0px 5px;
+	outline: none;
+}
+
+.active {
+    background-color: #14667e;
+	color: #ffffff;
+	padding: 15px 30px 15px 30px;
+	border-radius: 10px;
+	margin: 0px 5px 0px 5px;
+	outline: none;
+}
+
+#logout {
+    width: 120px;
+	height: 40px;
+    background-color: #00a3e8;
+    color: white;
+    border: 1px solid #5abee8;
+    border-radius: 5px;
+	margin-top: 3%;
+	margin-left: 5%;
+    cursor: pointer;
+	border-bottom: 4px solid #006ea5;
+}
+
+#logout:hover {
+    background-color: 	#6dc3e8;
+	border-bottom: 4px solid #05839c;
+}
+
+.delete{
+	width: 60px;
+	height: 20px;
+    background-color: #00a3e8;
+    color: white;
+    margin: 3px 0;
+    font-size: 11px;
+    border: 1px solid #5abee8;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.delete:hover {
+    background-color: 	#6dc3e8;
+}
+
+#turtle{
+	height: 160px;
+	margin-left: 130px;
+	margin-top: 50px;
+	position: absolute;
+	z-index: 15;
+}
+
+.text{
+	color: #05839c;
+	height: 32px;
+	margin-top: 145px;
+	border: 0px;
+	margin-left: 260px;
+	font-size: 16px;
+	width: 510px;
+	border-radius: 5px;
+	padding-right: 180px;
+	padding-left: 50px;
+	position: absolute;
+	font-size: 12px;
+	z-index: 10;
+}
+
+.text:focus{
+	-webkit-box-shadow: 0px 0px 10px rgba(0,0,0,.4);
+    -moz-box-shadow: 0px 0px 10px rgba(0,0,0,.4);
+    box-shadow: 0px 0px 10px rgba(0,0,0,.4);
+}
+
+#selReq{
+	width: 740px;
+	height: 36px;
+	border-radius: 5px;
+	border: none;
+	margin-left: 259px;
+	margin-top: 144px;
+	position: absolute;
+	color: #05839c;
+	padding-left: 20px;
+	z-index: 20;
+}
+
+#selReq:hover{
+	cursor: pointer;
+}
+
+#selReq:focus{
+	border: solid 1px #6fa1f2;
+	-webkit-box-shadow: 0px 0px 10px rgba(0,0,0,.4);
+    -moz-box-shadow: 0px 0px 10px rgba(0,0,0,.4);
+    box-shadow: 0px 0px 10px rgba(0,0,0,.4);
+    cursor: pointer;
+}
+
+.selStat{
+	font-size: 11px;
+	width: 90px;
+	height: 20px;
+	padding-left: 5px;
+	border-radius: 4px;
+}
+
+.selStat:hover{
+	cursor: pointer;
+}
+
+::-webkit-input-placeholder {
+   color: #6dc3e8;
+}
+
+#dolphin{
+	height: 200px;
+	position: absolute;
+	margin-top: 50px;
+	margin-left: 755px;
+	z-index: 15;
+}
+
+#octopus{
+	height: 230px;
+	position: absolute;
+	margin-left: 790px;
+	margin-top: 40px;
+	z-index: 15;
+}
+
+#boat{
+	height: 230px;
+	position: absolute;
+	margin-left: 790px;
+	margin-top: 35px;
+	z-index: 15;
+}
+
+#glass{
+	height: 16px;
+	margin-top: 153px;
+	margin-left: 280px;
+	position: absolute;
+	z-index: 15;
+}
+
+.imgs{
+	-webkit-animation: fadeEffect 0.5s;
+    animation: fadeEffect 0.5s; /* Fading effect takes 1 second */
+}
+
+@-webkit-keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+option:nth-child(even){ background-color: #f0f0ff; }
+option:nth-child(odd){ background-color: white; }
+
+tr:nth-child(even) {
+	background-color: white;
+}
+
+tr:nth-child(odd) {
+	background-color: #efefef;
+}
+tr:not(:first-child):hover{
+	background-color: #b6e2ef;
+}
+
+td { 
+    padding-left: 10px;
+    color: #14667e;
+	line-height: 20px;
+	font-size: 11px;
+	text-align: left;
+}
+
+.highlight
+{
+	background-color: #5abee8;
+	color: white;
+}
+
+table{
+	width: 100%;	
+	border-collapse:collapse;
+	-webkit-box-shadow: 0px 20px 30px rgba(0,0,0,.2);
+    -moz-box-shadow: 0px 20px 30px rgba(0,0,0,.2);
+    box-shadow: 0px 20px 30px rgba(0,0,0,.2);
+}
+
+.content{
+	width: 90%;
+	height: 100%;
+	margin: 0 auto;
+	margin-top: 200px;	
+}
+
+#topleft{
+	border-top-left-radius: 10px; 
+	backgroud-color: #5abee8; 
+}
+
+#topright{
+	border-top-right-radius: 10px; 
+	backgroud-color: #5abee8;
+}
+
+th{
+	color: white;
+	padding-left: 10px;
+	background-color: #14667e;
+	font-size: 11px;
+	line-height: 30px;
+	text-align: left;
+}
+
